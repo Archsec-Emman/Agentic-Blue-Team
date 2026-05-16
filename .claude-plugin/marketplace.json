@@ -1,0 +1,19 @@
+{
+  "name": "ASP",
+  "owner": {
+    "name": "Funnywolf"
+  },
+  "metadata": {
+    "description": "Agentic Blue Team Claude Plugin",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "ASP",
+      "description": "A comprehensive toolkit for operating the ASP platform.",
+      "source": "./PLUGINS/ClaudeCode",
+      "category": "cybersecurity",
+      "homepage": "https://github.com/Archsec-Emman/Agentic-Blue-Team/tree/master/PLUGINS/ClaudeCode"
+    }
+  ]
+}

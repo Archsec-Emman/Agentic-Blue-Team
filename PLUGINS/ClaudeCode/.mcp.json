@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "asp": {
+      "type": "sse",
+      "url": "${ASP_MCP_SSE_URL}"
+    }
+  }
+}
+

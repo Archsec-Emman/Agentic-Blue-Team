@@ -1,0 +1,68 @@
+import importlib
+import os
+import threading
+import time
+
+from Lib.log import logger
+
+
+class ModuleEngine:
+    def __init__(self):
+        self.modules = {}
+        self.modules_dir = "MODULES"
+
+    def start(self):
+
+        self._load_initial_modules()
+
+        logger.info("ModuleEngine started successfully, beginning module monitoring")
+
+    def _load_initial_modules(self):
+        load_module_count = 0
+        for filename in os.listdir(self.modules_dir):
+            if filename.endswith(".py") and not filename.startswith("_"):
+                module_name = filename.replace(".py", "")
+                file_path = os.path.join(self.modules_dir, filename)
+                self.load_module(module_name, file_path)
+                load_module_count += 1
+        logger.info(f"Loaded {load_module_count} modules from '{self.modules_dir}' directory")
+
+    def run_loop(self, module_name, instance):
+        while module_name in self.modules:
+            logger.debug(f"Start Running module: {module_name}")
+            try:
+                instance.run()
+            except Exception as e:
+                logger.exception(e)
+            logger.debug(f"Finish Running module: {module_name}")
+            time.sleep(0.1)
+
+    def load_module(self, module_name: str, file_path: str):
+        if module_name in self.modules:
+            return
+
+        logger.debug(f"Loading module: {module_name}")
+        try:
+            spec = importlib.util.spec_from_file_location(module_name, file_path)
+            module = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(module)
+
+            module_class = getattr(module, "Module")
+
+            threads = []
+            for i in range(module_class.THREAD_NUM):
+                thread_name = f"{module_name}_thread_{i}"
+                instance = module_class()
+                instance._thread_name = thread_name
+                thread = threading.Thread(target=self.run_loop, args=(module_name, instance), name=thread_name)
+                thread.daemon = True
+                threads.append(thread)
+
+            self.modules[module_name] = threads
+            for thread in self.modules[module_name]:
+                thread.start()
+
+            logger.debug(f"Module '{module_name}' started successfully")
+
+        except Exception as e:
+            logger.error(f"Failed to load module: {e}")

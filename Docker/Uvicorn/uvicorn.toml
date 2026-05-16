@@ -1,0 +1,8 @@
+[server]
+app = "ASP.asgi:application"
+
+# Host address to listen on
+host = "127.0.0.1"
+
+# Port to listen on
+port = 7000
