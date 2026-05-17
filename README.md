@@ -3,38 +3,66 @@
 </p>
 
 
+# 🛡️ Agentic Blue Team
 
+### AI-Powered Autonomous Security Operations
 
-**Agentic Blue Team** A powerful, flexible, open-source, and agent-centric automated security operations platform.
+**Agentic Blue Team** is a powerful, flexible, open-source, and agent-centric
+automated security operations platform. It combines AI-driven intelligence
+with a built-in SIRP to deliver autonomous alert triage, enrichment, and
+response — all from a single, self-hosted deployment.
 
-## Core Features
+---
 
-- 🧠 **AI-driven Intelligence**: Utilizes built-in AI Agent templates like Langgraph and Dify, supporting local LLMs to
-  enhance alert analysis and automated response capabilities.
-- 📊 **Built-in SIRP Platform**: Comes with a ready-to-use Security Incident Response Platform (SIRP) built on Nocoly,
-  allowing for rapid customization of user interfaces, data models, reports, and workflows.
-- ⚙️ **Powerful Automation Workflow**: Achieves efficient alert processing through Webhook + Redis Stream, natively
-  supporting mainstream SIEM platforms such as Splunk and Kibana (ELK).
-- 🛠️ **Highly Extensible**: Provides a rich library of modules and plugins. The entire framework is written in Python,
-  facilitating secondary development and integration with various security devices and APIs.
-- 🛡️ **Local Deployment & Data Control**: Supports complete local deployment. All data, models, and operations can be
-  hosted within your own environment, ensuring enterprise data security and privacy.
-- ⚡ **Streaming and Batch Processing**: Offers streaming processing (modules) for real-time alert analysis and
+## 🧠 How It Works
+
+The platform processes security alerts through a streamlined multi-stage pipeline:
+
+1. **Alert Ingestion** – SIEM platforms (Splunk, Kibana/ELK) forward alerts via
+   Webhook into the platform's built-in receiver.
+2. **Stream Processing** – Alerts are pushed to Redis Streams, serving as
+   persistent message queues. Each alert type has its own dedicated stream.
+3. **AI Agent Analysis** – Modular AI agents consume alerts, perform deep
+   analysis using local LLMs, enrich data with threat intelligence, and
+   determine outcomes.
+4. **SIRP Integration** – Outputs are formatted into standardized security
+   records and sent to the built-in Security Incident Response Platform,
+   where cases, alerts, and artifacts are created or updated.
+5. **Automated Response** – Analysts trigger playbooks from the SIRP interface
+   to perform further actions such as threat hunting, remediation, or
+   notification.
+
+---
+
+## ⚡ Core Features
+
+- **AI-Driven Intelligence** – Built-in AI Agent templates (Langgraph, Dify)
+  supporting local LLMs for alert analysis and automated response.
+- **Built-in SIRP** – Ready-to-use Security Incident Response Platform built
+  on Nocoly, with rapid customization of UIs, data models, reports, and
+  workflows.
+- **Powerful Automation Workflow** – Efficient alert processing via
+  Webhook + Redis Stream, natively supporting Splunk and Kibana (ELK).
+- **Highly Extensible** – Rich library of Python modules and plugins for
+  integration with security devices and APIs.
+- **Local Deployment & Data Control** – Fully self-hosted. All data, models,
+  and operations stay within your environment.
+- **Streaming + Batch Processing** – Real-time alert analysis (modules) and
   event-driven automation (playbooks) for user-triggered tasks.
 
-## Architecture Overview
+---
 
-ASP processes security alerts and incidents through a simplified multi-stage process:
+## 🚀 Installation
 
-1. **SIEM/Alert Sources**: EDR, NDR, or other security tools send alerts to a SIEM (e.g., Splunk, Kibana).
-2. **Webhook Forwarder**: The SIEM forwards these alerts via Webhook to the ASP's built-in Webhook receiver.
-3. **Redis Stream**: The receiver pushes the alerts to the corresponding Redis Stream, serving as a persistent message
-   queue. Each alert type has its own stream.
-4. **Module ModuleEngine**: ASP **modules** consume alerts from their designated streams, perform analysis (often using AI
-   Agents), enrich data, and determine outcomes.
-5. **SIRP Platform**: The output of the modules (now formatted into standardized security records) is sent to the **SIRP
-   ** platform, where cases, alerts, and artifacts are created or updated.
-6. **PlaybookLoader ModuleEngine**: Analysts can trigger **playbooks** from the SIRP user interface against cases, alerts, or
-   artifacts to perform further automated actions, such as threat intelligence enrichment or remediation.
+### Prerequisites
+- Python 3.10+
+- Redis
+- Docker (optional, for containerized deployment)
 
-
+### Quick Start
+```bash
+git clone https://github.com/Arc-Cyber-Arsenal/Agentic-Blue-Team
+cd Agentic-Blue-Team
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
