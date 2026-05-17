@@ -37,18 +37,4 @@ ASP processes security alerts and incidents through a simplified multi-stage pro
 6. **PlaybookLoader ModuleEngine**: Analysts can trigger **playbooks** from the SIRP user interface against cases, alerts, or
    artifacts to perform further automated actions, such as threat intelligence enrichment or remediation.
 
-![img_1.webp](Docker/IMG/img_20.png)
-![img_2.webp](Docker/IMG/img_21.png)
-![img_2.webp](Docker/IMG/img_22.png)
-![img_3.webp](Docker/IMG/img_23.png)
-![img_4.webp](Docker/IMG/img_24.png)
 
-## Official Website
-
-[https://asp.viperrtp.com](https://asp.viperrtp.com)
-
-## 404Starlink
-
-<img src="./Docker/IMG/logo.png" width="30%">
-
-Agentic Blue Team has joined [404Starlink](https://github.com/knownsec/404StarLink)
