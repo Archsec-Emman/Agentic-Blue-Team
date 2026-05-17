@@ -1,26 +1,8 @@
-![cover-v5-optimized](Docker/IMG/img.png)
-
 <p align="center">
-  <a href="https://asp.viperrtp.com/asf/Development/environment_setup/">Getting-started</a> ·
-  <a href="https://asp.viperrtp.com/asf/Introduction/what_is_asf/">Documentation</a>
+  <img src="https://raw.githubusercontent.com/Arc-Cyber-Arsenal/Agentic-Blue-Team/master/agentic%20blue%20team.png" alt="403-Killchain Banner" width="600">
 </p>
 
-<p align="center">
-    <a href="https://asp.viperrtp.com/" target="_blank">
-        <img alt="Static Badge" src="https://img.shields.io/badge/Website-F04438"></a>
-    <a href="https://github.com/funnywolf/Agentic-Blue-Team/graphs/commit-activity" target="_blank">
-        <img alt="Commits last month" src="https://img.shields.io/github/commit-activity/m/funnywolf/Agentic-Blue-Team?labelColor=%20%2332b583&color=%20%2312b76a"></a>
-    <a href="https://github.com/funnywolf/Agentic-Blue-Team/" target="_blank">
-        <img alt="Issues closed" src="https://img.shields.io/github/issues-search?query=repo%3Afunnywolf%2FAgentic-Blue-Team%20is%3Aclosed&label=issues%20closed&labelColor=%20%237d89b0&color=%20%235d6b98"></a>
-    <a href="https://github.com/funnywolf/Agentic-Blue-Team/releases" target="_blank">
-        <img alt="Release" src="https://img.shields.io/github/v/release/funnywolf/Agentic-Blue-Team?style=flat&label=Release&color=limegreen"></a>
-    <a href="https://deepwiki.com/Archsec-Emman/Agentic-Blue-Team"><img src="https://deepwiki.com/badge.svg" alt="Ask DeepWiki"></a>
-</p>
 
-<p align="center">
-  <a href="./README.md"><img alt="README in English" src="https://img.shields.io/badge/English-d9d9d9"></a>
-  <a href="./README_ZH.md"><img alt="简体中文版自述文件" src="https://img.shields.io/badge/简体中文-d9d9d9"></a>
-</p>
 
 
 **Agentic Blue Team** A powerful, flexible, open-source, and agent-centric automated security operations platform.
