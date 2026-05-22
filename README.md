@@ -61,7 +61,7 @@ The platform processes security alerts through a streamlined multi-stage pipelin
 
 ### Quick Start
 ```bash
-git clone https://github.com/Arc-Cyber-Arsenal/Agentic-Blue-Team
+git clone https://github.com/Archsec-Emman/Agentic-Blue-Team
 cd Agentic-Blue-Team
 pip install -r requirements.txt
 python manage.py migrate
